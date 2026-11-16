@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez tous les cours de langues proposés par SIL Campus Bénin : Anglais, Français, Espagnol, Allemand.">
+    <meta name="author" content="Alliance ODAH">
+    <title>Nos Formations - SLA Bénin</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== BARRE SUPÉRIEURE BLEUE ===== */
+        .top-bar {
+            background-color: #1a2332;
+            color: white;
+            padding: 12px 0;
+            font-size: 0.9rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .top-bar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .top-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .top-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .top-bar-item:hover {
+            color: #75A13F;
+        }
+
+        .top-bar-item i {
+            font-size: 1rem;
+        }
+
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .top-bar-location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-right: 15px;
+        }
+
+        .social-icons-top {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icon-top {
+            width: 32px;
+            height: 32px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1a2332;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-icon-top:hover {
+            background-color: #75A13F;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 44px;
+            left: 0;
+            right: 0;
+            z-index: 999;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            height: 60px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #75A13F;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #75A13F;
+        }
+
+        .btn-nav {
+            background: linear-gradient(135deg, #75A13F, #5a7f31);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(117, 161, 63, 0.3);
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            min-width: 220px;
+            padding: 10px 0;
+            list-style: none;
+            display: none;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            color: #2c3e50;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f8f9fa;
+            color: #75A13F;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #2c3e50;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* Hero Section for Courses Page */
+        .courses-hero {
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.65), rgba(52, 73, 94, 0.75)), url('images/IMG_0963.jpg'); 
+            background-size: cover;
+            background-position: center;
+            padding: 200px 0 150px; 
+            text-align: center;
+            color: white;
+            margin-top: 105px; /* Espace pour la barre bleue + navbar */
+        }
+        
+        .courses-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        
+        .courses-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        .courses-list-section {
+            padding: 80px 0 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Language Detail Section */
+        .language-detail {
+            padding: 60px 0;
+            margin-bottom: 40px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            background-color: white;
+        }
+
+        .language-detail:nth-child(even) {
+            background-color: #f7f9fb;
+        }
+
+        .language-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .language-text {
+            flex: 2;
+        }
+
+        /* Images */
+        .language-image {
+            flex: 1;
+            min-width: 350px;
+            height: 300px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .language-detail:nth-child(even) .language-content {
+            flex-direction: row-reverse;
+        }
+
+        .language-text h2 {
+            font-size: 2.5rem;
+            color: #75A13F;
+            margin-bottom: 15px;
+        }
+
+        .language-text h3 {
+            color: #2c3e50;
+            margin: 20px 0 10px;
+        }
+
+        .language-text p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .key-features {
+            margin-top: 20px;
+        }
+
+        .key-features h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .btn-course-details {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #75A13F;
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background 0.3s;
+            margin-top: 15px;
+            text-decoration: none;
+        }
+        
+        .btn-course-details:hover {
+            background: #5a7f31;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .cta-content p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #75A13F;
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-cta:hover {
+            background: #5a7f31;
+            transform: translateY(-2px);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer-main {
+            background-color: #1a2332;
+            color: white;
+            padding: 60px 20px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #75A13F;
+            font-weight: 700;
+        }
+
+        .footer-col p, .footer-col ul {
+            font-size: 0.95rem;
+            color: #b0b0b0;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #75A13F;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-col a:hover {
+            color: #5a7f31;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 20px auto 0;
+            text-align: center;
+            padding-top: 15px;
+            font-size: 0.9rem;
+            color: #b0b0b0;
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+            color: #b0b0b0;
+        }
+
+        .contact-info i {
+            color: #75A13F;
+            margin-top: 3px;
+        }
+
+        /* ===== ICONES SOCIALES FOOTER ===== */
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 35px;
+            height: 35px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1a2332;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 16px;
+        }
+
+        .social-icon:hover {
+            background-color: #75A13F;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Scroll Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #75A13F;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .scroll-top:hover {
+            background: #5a7f31;
+            transform: translateY(-5px);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .language-content {
+                flex-direction: column;
+            }
+            .language-detail:nth-child(even) .language-content {
+                flex-direction: column; 
+            }
+            .language-image {
+                width: 100%;
+                min-width: 100%;
+                height: 250px;
+            }
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .top-bar-container {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 20px;
+            }
+
+            .top-bar-left, .top-bar-right {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .top-bar-location {
+                margin-right: 0;
+            }
+
+            .courses-hero {
+                margin-top: 140px;
+                padding: 120px 0 80px;
+            }
+
+            .courses-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 105px;
+                left: -100%;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+                padding: 20px 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: translateY(7px) rotate(45deg);
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg);
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Barre supérieure bleue -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="top-bar-left">
+                <a href="tel:+2290154545416" class="top-bar-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+229 01 54 54 54 16</span>
+                </a>
+                <a href="mailto:slabenin.info@gmail.com" class="top-bar-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>slabenin.info@gmail.com</span>
+                </a>
+            </div>
+            <div class="top-bar-right">
+                <div class="top-bar-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Cotonou, Bénin</span>
+                </div>
+                <div class="social-icons-top">
+                    <a href="https://www.facebook.com/share/17RPSHCBWw/" class="social-icon-top" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://youtube.com/@slabenin?si=OEbEoWmskN0kwH8S" class="social-icon-top" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@sla.benin?_t=ZM-90kCfnxhpCC&_r=1" class="social-icon-top" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://linkedin.com" class="social-icon-top" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation principale -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/noire.png" alt="SLA Bénin" class="logo-img">
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="about.html" class="nav-link">À Propos</a></li>
+                <li class="dropdown">
+                    <a href="courses.html" class="nav-link active">Nos Formations <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#petitsexplorateurs">Petits Explorateurs</a></li>
+                        <li><a href="#talentsemergents">Talents Emergents</a></li>
+                        <li><a href="#premaster">Pré-Master</a></li>
+                        <li><a href="#ath">ATH</a></li>
+                        <li><a href="#aff">WISE</a></li>
+                        <li><a href="#autreprogramme">Autres Programmes</a></li>
+                    </ul>
+                </li>
+                <li><a href="gallery.html" class="nav-link">Galerie</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="inscription.html" class="btn-nav">S'inscrire</a></li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="courses-hero">
+        <div class="container" data-aos="fade-up">
+            <h1>Diversité de formations</h1>
+            <p>De l'enfance à la vie professionnelle, nos programmes vous ouvrent les portes des langues, du leadership et de la réussite mondiale.</p>
+        </div>
+    </section>
+
+    <section class="courses-list-section">
+        <div class="container">
+
+            <!-- Petits Explorateurs -->
+            <div class="language-detail" id="petitsexplorateurs" data-aos="fade-up">
+                <div class="language-content">
+                    <div class="language-text">
+                        <h2><i class="fas fa-child"></i> Petits Explorateurs</h2>
+                        <p>La cible : Enfants de 7 à 12 ans.</p>
+                        <h3>Objectif :</h3>
+                        <p>Initier les enfants à l'anglais dès le bas âge à travers des approches ludiques, interactives et éducatives, tout en développant leur confiance, leur créativité et leur esprit de leadership.</p>
+                        <div class="key-features">
+                            <h3>Durée :</h3>
+                            <p>Programme dure 10 à 12 Mois.</p>
+                        </div>
+                        <h3>Résultats attendus :</h3>
+                        <p>Les enfants deviennent à l'aise en anglais, développent un accent naturel et une ouverture d'esprit internationale.</p>
+                        <a href="inscription.html?course=PetitsExplorateurs" class="btn-course-details">S'inscrire à PE</a>
+                    </div>
+                    <!-- REMPLACE PAR TON IMAGE -->
+                    <div class="language-image" style="background-image: url('images/petit.jpg');"></div>
+                </div>
+            </div>
+
+            <!-- Talents Émergents -->
+            <div class="language-detail" id="talentsemergents" data-aos="fade-up">
+                <div class="language-content">
+                    <div class="language-text">
+                        <h2><i class="fas fa-lightbulb"></i> Talents Émergents</h2>
+                        <p>La cible : Enfants de 12 à 18 ans.</p>
+                        <h3>Objectif :</h3>
+                        <p>Accompagner les jeunes apprenants à découvrir et développer leurs talents linguistiques, intellectuels et de leadership pour devenir des modèles d'excellence dans leur communauté.</p>
+                        <div class="key-features">
+                            <h3>Durée :</h3>
+                            <p>Programme dure 10 à 12 Mois.</p>
+                        </div>
+                        <h3>Résultats attendus :</h3>
+                        <p>Des jeunes confiants, bilingues et conscients de leur potentiel personnel et professionnel.</p>
+                        <a href="inscription.html?course=TalentsEmergents" class="btn-course-details">S'inscrire à TE</a>
+                    </div>
+                    <!-- REMPLACE PAR TON IMAGE -->
+                    <div class="language-image" style="background-image: url('images/talent.jpg');"></div>
+                </div>
+            </div>
+
+            <!-- Pré-Master -->
+            <div class="language-detail" id="premaster" data-aos="fade-up">
+                <div class="language-content">
+                    <div class="language-text">
+                        <h2><i class="fas fa-graduation-cap"></i> Pré-Master</h2>
+                        <p>Préparer les diplômés francophones qui visent un Master au Bénin ou dans un pays anglophone à travers une formation intensive en anglais académique et une orientation stratégique.</p>
+                        <div class="key-features">
+                            <h3>Durée :</h3>
+                            <p>Programme dure 3 à 6 Mois.</p>
+                        </div>
+                        <h3>Résultats attendus :</h3>
+                        <p>Des candidats prêts pour les études supérieures internationales, avec un bon niveau d'anglais.</p>
+                        <a href="inscription.html?course=PreMaster" class="btn-course-details">S'inscrire à PM</a>
+                    </div>
+                    <!-- REMPLACE PAR TON IMAGE -->
+                    <div class="language-image" style="background-image: url('images/IMG_8113.jpeg');"></div>
+                </div>
+            </div>
+
+            <!-- ATH -->
+            <div class="language-detail" id="ath" data-aos="fade-up">
+                <div class="language-content">
+                    <div class="language-text">
+                        <h2><i class="fas fa-hotel"></i> ATH (Acteur Tourisme Hôtellerie)</h2>
+                        <p>Permettre aux professionnels et étudiants du secteur du tourisme, de l'hôtellerie et de la restauration de maîtriser l'anglais professionnel adapté à leur domaine.</p>
+                        <div class="key-features">
+                            <h3>Durée :</h3>
+                            <p>12 semaines par niveau (A1 à B1).</p>
+                        </div>
+                        <h3>Résultats attendus :</h3>
+                        <p>Professionnels capables de servir et de communiquer efficacement avec les clients anglophones, renforçant l'image du secteur béninois.</p>
+                        <a href="inscription.html?course=ATH" class="btn-course-details">S'inscrire à ATH</a>
+                    </div>
+                    <!-- REMPLACE PAR TON IMAGE -->
+                    <div class="language-image" style="background-image: url('CHEMIN_VERS_TON_IMAGE_ATH');"></div>
+                </div>
+            </div>
+
+            <!-- AFF -->
+            <div class="language-detail" id="aff" data-aos="fade-up">
+                <div class="language-content">
+                    <div class="language-text">
+                        <h2><i class="fas fa-user-tie"></i> WISE (Anglais pour Femmes en Fonction)</h2>
+                        <h3> Objectif:</h3>
+                        <p> WISE - Women In Service Empowerment est un programme de formation en anglais porté par SLA Bénin, conçu pour renforcer les compétences de communication, la confiance en soi et le leadership des femmes professionnelles.
+
+</br>Sa mission est de briser les barrières linguistiques qui freinent l'évolution de nombreuses femmes, en leur donnant les outils nécessaires pour s'exprimer avec assurance, affirmer leur crédibilité et accéder à de meilleures opportunités professionnelles et personnelles.
+
+ </br>À travers une formation intensive de trois (3) mois, WISE s'inscrit pleinement dans la vision de SLA Bénin : offrir une éducation de qualité, orientée vers l'impact, l'excellence et la transformation durable. Le programme repose sur la conviction profonde que la langue est un levier puissant d'autonomisation, de leadership et de changement social.
+ </br>Coût: <strong>40.000Fcfa </strong> au lieu de 80.000Fcfa.  </p>
+                     
+                        <div class="key-features">
+                            <h3>Durée :</h3>
+                            <p>Programme de 12 semaines, flexible selon les disponibilités.</p>
+                        </div>
+                        <h3>Résultats attendus :</h3>
+                        <p>Femmes autonomes, capables de communiquer en anglais dans leur milieu professionnel et de représenter efficacement leur structure.</p>
+                        <a href="inscription.html?course=AFF" class="btn-course-details">S'inscrire à WISE</a>
+                    </div>
+                    <!-- REMPLACE PAR TON IMAGE -->
+                    <div class="language-image" style="background-image: url('images/IMG_8319 copie 2.jpeg');"></div>
+                </div>
+            </div>
+
+            <!-- Autres Programmes -->
+            <div class="language-detail" id="autreprogramme" data-aos="fade-up">
+                <div class="language-content">
+                    <div class="language-text">
+                        <h2><i class="fas fa-globe-americas"></i> Autres Programmes</h2>
+                        <h3>Objectif:</h3>
+                        <p>Offrir à tous les publics une formation complète et structurée en anglais général, selon leur niveau et leur disponibilité.</p>
+                        <h3>Cours normaux:</h3>
+                        <p>3 séances par semaine, 2 heures par séance (progression modérée).</p>
+                        <h3>Cours Intensifs:</h3>
+                        <p>5 jours par semaine, 2 heures par jour.</p>
+                        <div class="key-features">
+                            <h3>Niveaux :</h3>
+                            <p>Débutant (A1) à Avancé (B2/C1).</p>
+                        </div>
+                        <h3>Résultats attendus :</h3>
+                        <p>Apprenants capables de comprendre et de s'exprimer naturellement en anglais, tant à l'écrit qu'à l'oral, dans des contextes sociaux, académiques ou professionnels.</p>
+                        <a href="inscription.html?course=AnglaisGeneral" class="btn-course-details">S'inscrire en Anglais</a>
+                    </div>
+                    <!-- REMPLACE PAR TON IMAGE -->
+                    <div class="language-image" style="background-image: url('images/autres-programmes.jpg');"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" data-aos="zoom-in">
+        <div class="cta-overlay"></div>
+        <div class="container">
+            <div class="cta-content">
+                <h2>L'avenir appartient à ceux qui osent apprendre ce que le monde exige...</h2>
+                <p>N'attendez plus pour transformer votre potentiel. Inscrivez-vous à une session dès aujourd'hui et maîtrisez la langue de votre choix.</p>
+                <a href="session.html" class="btn-cta">
+                    <span>Voir les Prochaines Sessions</span>
+                    <i class="fas fa-calendar-alt"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-main">
+        <div class="footer-content">
+            <!-- Col 1: Logo & Description -->
+            <div class="footer-col">
+                <a href="index.html" class="logo" style="color: white; margin-bottom: 15px; display: inline-block;">
+                    SLA <span>Bénin</span>
+                </a>
+                <p>Centre d'Excellence Académique spécialisé dans l'enseignement des langues et le renforcement des compétences.</p>
+                <div class="social-icons" style="margin-top: 20px;">
+                    <a href="https://www.facebook.com/share/17RPSHCBWw/" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://youtube.com/@slabenin?si=OEbEoWmskN0kwH8S" class="social-icon" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@sla.benin?_t=ZM-90kCfnxhpCC&_r=1" class="social-icon" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://linkedin.com" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Col 2: Liens Rapides -->
+            <div class="footer-col">
+                <h4>Liens Rapides</h4>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-angle-right"></i> Accueil</a></li>
+                    <li><a href="about.html"><i class="fas fa-angle-right"></i> À Propos de Nous</a></li>
+                    <li><a href="courses.html"><i class="fas fa-angle-right"></i> Nos Programmes</a></li>
+                    <li><a href="events-gallery.html"><i class="fas fa-angle-right"></i> Événements</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i> Politique de Confidentialité</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Formations Populaires -->
+            <div class="footer-col">
+                <h4>Nos Formations</h4>
+                <ul>
+                    <li><a href="#petitsexplorateurs"><i class="fas fa-graduation-cap"></i> Petits Explorateurs</a></li>
+                    <li><a href="#talentsemergents"><i class="fas fa-graduation-cap"></i> Talents Emergents</a></li>
+                    <li><a href="#premaster"><i class="fas fa-graduation-cap"></i> Pré-Master</a></li>
+                    <li><a href="#ath"><i class="fas fa-graduation-cap"></i> ATH</a></li>
+                    <li><a href="#aff"><i class="fas fa-graduation-cap"></i> AFF</a></li>
+                    <li><a href="#autreprogramme"><i class="fas fa-graduation-cap"></i> Autres Programmes</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 4: Contact -->
+            <div class="footer-col">
+                <h4>Contactez-Nous</h4>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Cotonou, Bénin<br>Sègbèya</span>
+                    </li>
+                    <li>
+                        <i class="fab fa-whatsapp"></i> 
+                        <span>+229 01 54 54 54 16</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+229 01 44 50 30 83</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>slabenin.info@gmail.com</span>
+                    </li>
+                    <li><a href="#"><i class="fas fa-clock"></i> Lun - Ven: 8h00 - 18h00</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 SLA Bénin. Tous droits réservés.
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialisation AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+
+        // Gestion du menu hamburger
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Fermer le menu quand on clique sur un lien
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.style.display = 'flex';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

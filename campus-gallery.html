@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galerie photo du campus, des salles de cours et des installations modernes de SIL Campus Bénin.">
+    <title>Campus & Installations - Galerie SIL Campus Bénin</title>
+    
+    <link rel="stylesheet" href="style.css"> 
+    
+    <style>
+        .gallery-header {
+            background-color: #e9f7ef; /* Couleur légèrement différente pour le Campus */
+            padding: 100px 0 50px;
+            text-align: center;
+            margin-top: 80px; 
+        }
+        .gallery-header h1 {
+            color: #1a5276;
+            font-size: 3rem;
+            font-weight: 800;
+        }
+
+        /* Utilise CSS Grid pour que les images s'ajustent automatiquement sur plusieurs colonnes */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Force les conteneurs d'images à avoir une hauteur uniforme */
+.gallery-item {
+    height: 300px; /* Sur PC/Tablette */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Assure que l'image couvre entièrement son conteneur sans déborder ni être déformée */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* C'est la clé de la responsivité pour l'image elle-même */
+    transition: transform 0.5s ease;
+}
+
+/* --- Media Queries pour les petits écrans --- */
+
+@media (max-width: 768px) {
+    .gallery-item {
+        height: 250px; /* Réduit la hauteur sur mobile/tablette */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Une seule colonne pour les très petits écrans */
+    }
+    .gallery-item {
+        height: 200px; /* Réduit encore la hauteur */
+    }
+}
+
+ /* ===== FOOTER ===== */
+        .footer-main {
+            background-color: #1a2332;
+            color: white;
+            padding: 60px 20px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .footer-col p, .footer-col ul {
+            font-size: 0.95rem;
+            color: #b0b0b0;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #b0b0b0;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 20px auto 0;
+            text-align: center;
+            padding-top: 15px;
+            font-size: 0.9rem;
+            color: #b0b0b0;
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .contact-info i {
+            color: var(--primary-color);
+            margin-top: 3px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .top-bar-container {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 20px;
+            }
+
+            .top-bar-left, .top-bar-right {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .top-bar-location {
+                margin-right: 0;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        
+    </style>
+</head>
+<body>
+    
+    <section class="gallery-header" data-aos="fade-up">
+        <div class="container">
+            <h1>Campus et Installations Modernes</h1>
+            <p>Découvrez nos infrastructures conçues pour un apprentissage optimal.</p>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid">
+                
+                <div class="gallery-item" data-aos="zoom-in">
+                    <img src="images/IMG_8441.jpg" alt="Vue extérieure du campus">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="images/IMG_8422.jpg" alt="Salle de classe moderne">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="images/IMG_8398.jpg" alt="Espace détente pour les étudiants">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                
+                </div>
+        </div>
+    </section>
+    
+    <footer class="footer-main">
+        <div class="footer-content">
+            <!-- Col 1: Logo & Description -->
+            <div class="footer-col">
+                <a href="index.html" class="logo" style="color: white; margin-bottom: 15px; display: inline-block;">
+                    SLA <span>Bénin</span>
+                </a>
+                <p>Centre d'Excellence Académique spécialisé dans l'enseignement des langues et le renforcement des compétences.</p>
+                <div class="social-icons" style="margin-top: 20px;">
+                    <a href="https://www.facebook.com/share/17RPSHCBWw/" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://youtube.com/@slabenin?si=OEbEoWmskN0kwH8S" class="social-icon" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@sla.benin?_t=ZM-90kCfnxhpCC&_r=1" class="social-icon" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://linkedin.com" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Col 2: Liens Rapides -->
+            <div class="footer-col">
+                <h4>Liens Rapides</h4>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-angle-right"></i> Accueil</a></li>
+                    <li><a href="about.html"><i class="fas fa-angle-right"></i> À Propos de Nous</a></li>
+                    <li><a href="courses.html"><i class="fas fa-angle-right"></i> Nos Programmes</a></li>
+                    <li><a href="events-gallery.html"><i class="fas fa-angle-right"></i> Événements</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i> Politique de Confidentialité</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Formations Populaires -->
+            <div class="footer-col">
+                <h4>Nos Formations</h4>
+                <ul>
+                    <li><a href="#"><i class="fas fa-graduation-cap"></i> Petits Explorateurs</a></li>
+                    <li><a href="#"><i class="fas fa-graduation-cap"></i> Talents Emergents</a></li>
+                    <li><a href="#"><i class="fas fa-graduation-cap"></i> Pré-Master</a></li>
+                    <li><a href="#"><i class="fas fa-graduation-cap"></i> ATH</a></li>
+                    <li><a href="#"><i class="fas fa-graduation-cap"></i> AFF</a></li>
+                    <li><a href="#"><i class="fas fa-graduation-cap"></i> Autres Programmes</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 4: Contact -->
+            <div class="footer-col">
+                <h4>Contactez-Nous</h4>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Cotonou, Bénin<br>Sègbèya</span>
+                    </li>
+                    <li>
+                        <i class="fab fa-whatsapp"></i> 
+                        <span>+229 01 54 54 54 16</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+229 01 44 50 30 83</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>slabenin.info@gmail.com</span>
+                    </li>
+                    <li><a href="#"><i class="fas fa-clock"></i> Lun - Ven: 8h00 - 18h00</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 SLA Bénin. Tous droits réservés.
+        </div>
+    </footer>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

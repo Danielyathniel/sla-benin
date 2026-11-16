@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez l'histoire, la mission et les valeurs de SIL Campus Bénin, votre Centre d'Excellence et de Discipline Académique.">
+    <meta name="author" content="Alliance ODAH">
+    <title>À Propos - SIL Campus Bénin</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* ===== BARRE SUPÉRIEURE BLEUE FIXE ===== */
+        .top-bar {
+            background-color: #1a2332;
+            color: white;
+            padding: 12px 0;
+            font-size: 0.9rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1001;
+            width: 100%;
+        }
+
+        /* Ajustement de la barre de navigation - POSITION FIXE AJOUTÉE */
+        .navbar {
+            position: fixed;
+            top: 32px; /* Positionné juste sous la barre bleue */
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        /* Augmentation du padding-top pour tout le contenu */
+        body {
+            padding-top: 92px; /* 32px (barre bleue) + 60px (navigation) */
+        }
+
+        .top-bar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .top-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .top-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .top-bar-item:hover {
+            color: #75A13F;
+        }
+
+        .top-bar-item i {
+            font-size: 1rem;
+        }
+
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .top-bar-location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-right: 15px;
+        }
+
+        .social-icons-top {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icon-top {
+            width: 32px;
+            height: 32px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1a2332;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-icon-top:hover {
+            background-color: #75A13F;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* =======================================
+           STYLES SPÉCIFIQUES À LA PAGE À PROPOS
+           ======================================= */
+        
+        /* Hero Section for About Page */
+        .about-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
+              url('images/hqdefault.jpg') no-repeat center center/cover;
+            background-attachment: fixed; /* (Optionnel: pour un effet parallax) */
+            padding: 100px 0 60px;
+            text-align: center;
+            color: white;
+            margin-top: 0; /* Pas de margin-top car le padding du body gère l'espace */
+        }
+        
+        .about-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        
+        .about-hero p {
+            font-size: 1.2rem;
+        }
+
+        /* Mission and Vision Section */
+        .mvv-section {
+            padding: 80px 0;
+            background-color: #f7f9fb;
+        }
+
+        /* CORRECTION APPORTÉE : Utilisation de Flexbox pour 4 colonnes */
+        .mvv-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: nowrap; /* Maintient sur une seule ligne sur grand écran */
+        }
+
+        .mvv-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            
+            /* Pour que les 4 cartes se partagent l'espace également */
+            flex: 1 1 25%; 
+            min-width: 0; 
+        }
+
+        .mvv-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(117, 161, 63, 0.2);
+        }
+
+        .mvv-card .icon {
+            font-size: 2.5rem;
+            color: #75A13F;
+            margin-bottom: 15px;
+        }
+
+        .mvv-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .mvv-card p {
+            color: #7f8c8d;
+            line-height: 1.7;
+            min-height: 150px; /* Aide à l'uniformité de la hauteur */
+        }
+
+        /* History Section */
+        .history-section {
+            padding: 80px 0;
+        }
+        
+        .history-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .history-text {
+            flex: 1;
+        }
+
+        .history-text h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .history-text p {
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .history-image {
+            flex: 1;
+            min-width: 40%;
+            height: 450px;
+            background-image: url('images/IMG_6394.jpg'); 
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Call to Action - Join Us */
+        .join-us-cta {
+            background-color: #75A13F;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .join-us-cta h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .join-us-cta p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        
+        
+         /* CORRECTION : RÉDUIRE L'ESPACE ENTRE LE NOM ET LE POSTE */
+        .why-content h3 {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 2px !important; /* Réduit considérablement l'espace */
+            line-height: 1.1;
+            padding-bottom: 0;
+        }
+
+        .why-content h4 {
+            font-size: 1rem;
+            color: #75A13F;
+            font-weight: 600;
+            margin-top: 0 !important; /* Supprime l'espace au-dessus */
+            margin-bottom: 12px; /* Garde un espace avant le paragraphe */
+            line-height: 1.2;
+            padding-top: 0;
+        }
+
+        .why-content p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-top: 10px;
+        }
+
+        /* Styles spécifiques pour les classes employee */
+        .employee-name {
+            margin-bottom: 2px !important;
+            line-height: 1.1 !important;
+        }
+
+        .employee-position {
+            margin-top: 0 !important;
+            margin-bottom: 10px !important;
+            line-height: 1.2 !important;
+        }
+
+        .employee-description {
+            margin-top: 10px;
+        }
+
+        /* Call to Action - Join Us */
+        .join-us-cta {
+            background-color: #75A13F;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .join-us-cta h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .join-us-cta p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+
+        /* ===== FOOTER ===== */
+        .footer-main {
+            background-color: #1a2332;
+            color: white;
+            padding: 60px 20px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #75A13F;
+            font-weight: 700;
+        }
+
+        .footer-col p, .footer-col ul {
+            font-size: 0.95rem;
+            color: #b0b0b0;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #75A13F;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-col a:hover {
+            color: #5a7f31;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 20px auto 0;
+            text-align: center;
+            padding-top: 15px;
+            font-size: 0.9rem;
+            color: #b0b0b0;
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .contact-info i {
+            color: #75A13F;
+            margin-top: 3px;
+        }
+
+        .social-links-footer {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        /* Ajustement pour la section hero */
+        .about-hero {
+            margin-top: 0; /* Supprime tout margin-top précédent */
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1200px) {
+            /* Passe à 2 cartes par ligne pour MVV sur écrans intermédiaires */
+            .mvv-grid {
+                flex-wrap: wrap; 
+                justify-content: center;
+            }
+            .mvv-card {
+                flex: 1 1 calc(50% - 15px); /* Deux cartes par ligne avec gap */
+            }
+        }
+
+        @media (max-width: 992px) {
+            /* Garde 2 cartes par ligne sur tablette pour MVV */
+            .mvv-grid {
+                gap: 20px;
+            }
+            .mvv-card {
+                flex: 1 1 calc(50% - 10px);
+            }
+            
+            /* Histoire en colonne */
+            .history-content {
+                flex-direction: column;
+            }
+            .history-image {
+                width: 100%;
+                height: 350px;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .top-bar-container {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 20px;
+            }
+            
+            .top-bar-left, .top-bar-right {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            
+            .top-bar-location {
+                margin-right: 0;
+            }
+            
+            /* Ajustement pour mobile */
+            .navbar {
+                top: 70px; /* Ajustement pour mobile si la barre bleue est plus haute */
+            }
+            
+            body {
+                padding-top: 130px; /* Ajustement pour mobile */
+            }
+            
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-hero p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            /* Sur les petits mobiles, 1 carte par ligne pour MVV */
+            .mvv-card {
+                flex: 1 1 100%; 
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-hero {
+                padding: 80px 0 40px;
+            }
+            
+            .history-image {
+                height: 300px;
+            }
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <!-- ===== BARRE SUPÉRIEURE BLEUE FIXE ===== -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="top-bar-left">
+                <a href="tel:+2290154545416" class="top-bar-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+229 01 54 54 54 16</span>
+                </a>
+                <a href="mailto:slabenin.info@gmail.com" class="top-bar-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>slabenin.info@gmail.com</span>
+                </a>
+            </div>
+            <div class="top-bar-right">
+                <div class="top-bar-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Cotonou, Bénin</span>
+                </div>
+                <div class="social-icons-top">
+                    <a href="https://www.facebook.com/share/17RPSHCBWw/" class="social-icon-top" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://youtube.com/@slabenin?si=OEbEoWmskN0kwH8S" class="social-icon-top" aria-label="Youtube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@sla.benin?_t=ZM-90kCfnxhpCC&_r=1" class="social-icon-top" aria-label="Tiktok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://linkedin.com" class="social-icon-top" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/noire.png" alt="SLA Bénin" class="logo-img">
+                <div class="logo-text">
+                </div>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="about.html" class="nav-link active">À Propos</a></li>
+                <li class="dropdown">
+                    <a href="courses.html" class="nav-link">Nos Formations <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="courses.html#petitsexplorateurs">Petits Explorateurs</a></li>
+                        <li><a href="courses.html#talentsemergents">Talents Emergents</a></li>
+                        <li><a href="courses.html#premaster">Pré-Master</a></li>
+                        <li><a href="courses.html#ath">ATH</a></li>
+                        <li><a href="courses.html#aff">AFF</a></li>
+                        <li><a href="courses.html#autreprogramme">Autre Programme</a></li>
+                    </ul>
+                </li>
+                <li><a href="gallery.html" class="nav-link">Galerie</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="inscription.html" class="btn-nav">S'inscrire</a></li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container" data-aos="fade-up">
+            <h1>Notre Histoire & Notre Engagement</h1>
+            <p>Centre d'Excellence et de Discipline Académique au service de votre avenir linguistique.</p>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section class="history-section">
+        <div class="container">
+            <div class="history-content">
+                <div class="history-text" data-aos="fade-right">
+                    <div class="section-header" style="text-align: left;">
+                        <h2 class="section-title">Notre Histoire</h2>
+                        <div class="title-line" style="margin-left: 0;"></div>
+                    </div>
+                    <p> <strong>Bienvenue à Seed of Languages and Leadership Academy (SLA Bénin)</strong>
+                        Chez SLA Bénin, nous croyons que la maîtrise des langues et le développement du leadership sont les clés de la réussite personnelle et professionnelle.
+                    <br> Née en 2016 au Ghana sous le nom de Seed Institute of Languages, notre institut a formé des milliers d'apprenants venus du Ghana, du Bénin, du Togo, de la Côte d'Ivoire et d'autres pays d'Afrique francophone.
+                    <br>En 2018, nous avons étendu notre expertise au Bénin, avec pour mission de rendre l'apprentissage de l'anglais accessible à tous.
+                    <br>Après deux années d'activité, nous avons marqué une pause stratégique pour redéfinir notre vision et renforcer notre impact. En 2025, nous avons officiellement relancé nos activités sous le nom de Seed of Languages and Leadership Academy (SLA Bénin), symbole d'un nouvel élan et d'une approche innovante centrée sur la formation linguistique et le leadership intégral.</p>
+                    <h3><strong>LOKOSSOU Mahussédè G. Isaac</strong></h3>
+                    <p>Fondateur & Directeur Général</p>
+                    <a href="gallery.html" class="btn btn-primary" style="margin-top: 15px;">Voir le Campus</a>
+                </div>
+                <div class="history-image" data-aos="fade-left">
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission, Vision, Values Section -->
+    <section class="mvv-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Mission, Vision, Valeurs & Nos Certifications</h2>
+                <div class="title-line"></div>
+                <p class="section-subtitle">Les principes fondamentaux qui guident chaque aspect de notre enseignement.</p>
+            </div>
+
+            <div class="mvv-grid">
+
+                <div class="mvv-card" data-aos="zoom-in" data-aos-delay="100">
+                  <i class="fas fa-bullseye icon"></i>
+                  <h3>Notre Mission</h3>
+                  <p>
+                    Offrir des formations linguistiques et de leadership de haut niveau, adaptées aux besoins des enfants, étudiants, professionnels et institutions, afin de favoriser l'épanouissement personnel, la compétitivité et l'employabilité.
+                    Nous croyons que la maîtrise de l'anglais est bien plus qu'une compétence : c'est un passeport pour le monde et un levier d'influence pour bâtir une génération de leaders africains ouverts sur l'international.
+                  </p>
+                </div>
+              
+                <div class="mvv-card" data-aos="zoom-in" data-aos-delay="200">
+                  <i class="fas fa-eye icon"></i>
+                  <h3>Notre Vision</h3>
+                  <p>
+                    Former une génération panafricaine compétente, confiante et engagée, capable de communiquer en anglais et de diriger avec excellence, intégrité et impact.
+                    <br><br>Notre vision est de faire de SLA Bénin une référence en Afrique francophone dans la formation en langues et en leadership, en inspirant chaque apprenant à devenir un acteur du changement dans son environnement.
+                  </p>
+                </div>
+              
+                <div class="mvv-card" data-aos="zoom-in" data-aos-delay="300">
+                  <i class="fas fa-gem icon"></i>
+                  <h3>Nos Valeurs Fondamentales</h3>
+                  <p>
+                    <strong>• Excellence académique :</strong> Offrir des formations rigoureuses, structurées et de qualité.<br>
+                    <strong>• Discipline :</strong> Cultiver la rigueur, la constance et la responsabilité dans l'apprentissage.<br>
+                    <strong>• Accessibilité :</strong> Rendre la maîtrise de l'anglais possible pour tous, sans distinction d'âge, de statut ou de niveau.
+                  </p>
+                </div>
+              
+                <div class="mvv-card" data-aos="zoom-in" data-aos-delay="400">
+                  <i class="fas fa-award icon"></i>
+                  <h3>Nos Partenariats & Certifications</h3>
+                  <p>
+                    Nous sommes fiers d'être affiliés au <strong>British Council English Score</strong>, ce qui nous permet de proposer des programmes rigoureux, alignés sur les standards internationaux.
+                    <br><br>Nos diplômes et certificats, délivrés en collaboration avec <strong>SLA Ghana</strong> et le <strong>British Council</strong>, sont reconnus à l'échelle mondiale et ouvrent les portes des universités et institutions anglophones à l'étranger.
+                  </p>
+                </div>
+              
+            </div>
+        </div>
+    </section>
+
+   <!-- Team Section -->
+<section class="why-us">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">Rencontrez Notre Equipe</h2>
+            <div class="title-line"></div>
+        </div>
+        
+        <div class="why-grid">
+            <div class="why-item" data-aos="fade-right">
+                <div class="why-image" style="background-image: url(images/IMG_9873.jpg);"></div>
+                <div class="why-content">
+                    <h3 class="employee-name">LOKOSSOU Mikpamahu Hyppolite</h3>
+                    <h4 class="employee-position">Directeur Général Adjoint (DGA) SLA-BÉNIN</h4>
+                    <p class="employee-description">Il occupe un rôle stratégique situé à l'intersection de la gestion opérationnelle, du développement commercial et de la qualité pédagogique.</p>
+                </div>
+            </div>
+            
+            <div class="why-item" data-aos="fade-right">
+                <div class="why-image" style="background-image: url(images/IMG_9780.jpg);"></div>
+                <div class="why-content">
+                    <h3 class="employee-name">AZO Keren</h3>
+                    <h4 class="employee-position">Secrétaire comptable et Coach</h4>
+                    <p class="employee-description">Chargée de la gestion administrative et comptable de l'institution, elle assure le suivi des opérations financières, la tenue et le classement des pièces comptables, ainsi que l'organisation administrative des activités. Elle exerce également les fonctions d'enseignante, en assurant la préparation, l'animation et le suivi des cours, conformément aux objectifs pédagogiques de l'institution. Elle contribue activement au bon fonctionnement administratif, financier et académique de la structure, dans le respect des procédures internes et des standards professionnels.</p>
+                </div>
+            </div>
+            
+            <div class="why-item" data-aos="fade-right">
+                <div class="why-image" style="background-image: url(images/IMG_9781.jpg);"></div>
+                <div class="why-content">
+                    <h3 class="employee-name">AGOSSOU Emmanuella</h3>
+                    <h4 class="employee-position">Chargée Marketing et Communication</h4>
+                    <p class="employee-description">Titulaire d'un Bachelor en Marketing de la Presbyterian University Ghana, elle veille à la visibilité et à la croissance de l'entreprise à travers des actions de communication et de marketing stratégiques. Intermédiaire entre SLA Bénin et vous, cher client, elle assure votre satisfaction tout en entretenant notre relation sur long-terme.</p>
+                </div>
+            </div>
+            
+            <div class="why-item" data-aos="fade-right">
+                <div class="why-image" style="background-image: url(images/IMG_9782.jpg);"></div>
+                <div class="why-content">
+                    <h3 class="employee-name">AKPANON Marie-claire</h3>
+                    <h4 class="employee-position">Coach et Formateur</h4>
+                    <p class="employee-description">Enseignante d’anglais et facilitatrice linguistique à SLA BENIN, spécialisée en pédagogie communicative et en accompagnement des apprenants. Grâce à une formation académique en anglais et une expérience en encadrement au sein d’un club d’anglais, je conçois des cours interactifs visant à développer l’aisance, la confiance et la maîtrise de l’anglais chez les apprenants.</p>
+                </div>
+            </div>
+            
+          
+            
+            
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="join-us-cta" data-aos="zoom-in">
+    <div class="container">
+        <h2>Transformez votre potentiel en succès.</h2>
+        <p>Découvrez l'expérience qui change des vies avec SLA Bénin.</p>
+        <a href="inscription.html" class="btn btn-primary">
+            <span>Démarrer Votre Inscription</span>
+            <i class="fas fa-graduation-cap"></i>
+        </a>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="footer-main">
+        <div class="footer-content">
+            <!-- Col 1: Logo & Description -->
+            <div class="footer-col">
+                <h4>SLA BÉNIN</h4>
+                <p>Centre d'Excellence Académique spécialisé dans l'enseignement des langues et le renforcement des compétences.</p>
+                <div class="social-links-footer">
+                    <a href="https://www.facebook.com/share/17RPSHCBWw/" class="social-icon-top" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://youtube.com/@slabenin?si=OEbEoWmskN0kwH8S" class="social-icon-top" aria-label="Youtube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@sla.benin?_t=ZM-90kCfnxhpCC&_r=1" class="social-icon-top" aria-label="Tiktok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://linkedin.com" class="social-icon-top" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Col 2: Liens Rapides -->
+            <div class="footer-col">
+                <h4>Liens Rapides</h4>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-angle-right"></i> Accueil</a></li>
+                    <li><a href="about.html"><i class="fas fa-angle-right"></i> À Propos de Nous</a></li>
+                    <li><a href="courses.html"><i class="fas fa-angle-right"></i> Nos Programmes</a></li>
+                    <li><a href="gallery.html"><i class="fas fa-angle-right"></i> Événements</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i> Politique de Confidentialité</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Formations Populaires -->
+            <div class="footer-col">
+                <h4>Nos Formations</h4>
+                <ul>
+                    <li><a href="courses.html#petitsexplorateurs"><i class="fas fa-graduation-cap"></i> Petits Explorateurs</a></li>
+                    <li><a href="courses.html#talentsemergents"><i class="fas fa-graduation-cap"></i> Talents Emergents</a></li>
+                    <li><a href="courses.html#premaster"><i class="fas fa-graduation-cap"></i> Pré-Master</a></li>
+                    <li><a href="courses.html#ath"><i class="fas fa-graduation-cap"></i> ATH</a></li>
+                    <li><a href="courses.html#aff"><i class="fas fa-graduation-cap"></i> AFF</a></li>
+                    <li><a href="courses.html#autreprogramme"><i class="fas fa-graduation-cap"></i> Autres Programmes</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 4: Contact -->
+            <div class="footer-col">
+                <h4>Contactez-Nous</h4>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Cotonou, Bénin<br>Sègbèya</span>
+                    </li>
+                    <li>
+                        <i class="fab fa-whatsapp"></i> 
+                        <span>+229 01 54 54 54 16</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+229 01 44 50 30 83</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>slabenin.info@gmail.com</span>
+                    </li>
+                    <li><a href="#"><i class="fas fa-clock"></i> Lun - Ven: 8h00 - 18h00</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 SLA Bénin. Tous droits réservés.
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

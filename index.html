@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SLA Bénin - Centre d'Excellence et de Discipline Académique">
+    <meta name="keywords" content="école de langues, anglais, français, espagnol, allemand, Bénin, Cotonou">
+    <meta name="author" content="Alliance ODAH">
+    <title>SLA Bénin - Accueil</title>
+    <link rel="icon" type="image/png" href="images/noire.png">
+
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    
+    // Version avec vérification RGPD
+    function initializeFacebookPixel() {
+        fbq('init', '1334239714906792');
+        fbq('track', 'PageView');
+    }
+    
+    // Vérifier si l'utilisateur a déjà accepté les cookies
+    if(localStorage.getItem('cookieConsent') === 'accepted') {
+        initializeFacebookPixel();
+    }
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1334239714906792&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* ===== BARRE SUPÉRIEURE BLEUE FIXE ===== */
+        .top-bar {
+            background-color: #1a2332;
+            color: white;
+            padding: 12px 0;
+            font-size: 0.9rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1001;
+            width: 100%;
+        }
+
+        /* Ajustement de la barre de navigation - POSITION FIXE AJOUTÉE */
+        .navbar {
+            position: fixed;
+            top: 32px;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        /* Augmentation du padding-top pour tout le contenu */
+        body {
+            padding-top: 92px;
+        }
+
+        .top-bar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .top-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .top-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .top-bar-item:hover {
+            color: #75A13F;
+        }
+
+        .top-bar-item i {
+            font-size: 1rem;
+        }
+
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .top-bar-location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-right: 15px;
+        }
+
+        .social-icons-top {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icon-top {
+            width: 32px;
+            height: 32px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1a2332;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-icon-top:hover {
+            background-color: #75A13F;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* ===== NOUVEAU DESIGN DU SLIDER HERO - STYLE MODERNE ET PROFESSIONNEL ===== */
+        .hero-slider {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: relative;
+            display: none;
+            align-items: center;
+            min-height: 600px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        /* Overlay dégradé moderne */
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(26, 35, 50, 0.85) 0%, rgba(117, 161, 63, 0.7) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 80px;
+            width: 100%;
+        }
+
+        /* Style du badge supérieur */
+        .hero-badge {
+            display: inline-block;
+            background: rgba(117, 161, 63, 0.2);
+            border: 2px solid #75A13F;
+            color: #75A13F;
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        /* CORRECTION : TEXTE PLUS PETIT */
+        .hero-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem; /* Réduit de 3.2rem à 2.2rem */
+            font-weight: 700;
+            line-height: 1.2;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-title span {
+            color: #75A13F;
+        }
+
+        /* CORRECTION : SOUS-TITRE PLUS PETIT */
+        .hero-subtitle {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 1rem; /* Réduit de 1.15rem à 1rem */
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 35px;
+            max-width: 600px;
+            font-weight: 400;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1.4s ease-out;
+        }
+
+        /* Boutons redessinés - PLUS PETITS */
+        .btn-primary {
+            background: linear-gradient(135deg, #75A13F 0%, #5a7f31 100%);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(117, 161, 63, 0.3);
+            border: 2px solid transparent;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(117, 161, 63, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 2px solid white;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #1a2332;
+            transform: translateY(-2px);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Boutons de navigation du slider */
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .slider-btn:hover {
+            background: rgba(117, 161, 63, 0.9);
+            border-color: #75A13F;
+        }
+
+        .slider-btn.prev {
+            left: 20px;
+        }
+
+        .slider-btn.next {
+            right: 20px;
+        }
+
+        /* Dots du slider */
+        .slider-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot:hover {
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .dot.active {
+            background: #75A13F;
+            width: 30px;
+            border-radius: 6px;
+        }
+
+        /* ===== NOUVELLES SECTIONS POUR RESSEMBLER À L'IMAGE ===== */
+        
+        /* Section Éclaireurs Modernes */
+        .modern-guides-section {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .modern-guides-title {
+            font-size: 2.5rem;
+            color: #1a2332;
+            margin-bottom: 20px;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        .modern-guides-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #75A13F;
+            border-radius: 2px;
+        }
+
+        .modern-guides-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .modern-guides-features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .modern-guide-feature {
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .modern-guide-feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .modern-guide-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #75A13F 0%, #5a7f31 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 32px;
+        }
+
+        .modern-guide-feature h3 {
+            font-size: 1.5rem;
+            color: #1a2332;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .modern-guide-feature p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Section Nos Partenaires */
+        .partners-section {
+            background-color: white;
+            padding: 80px 0;
+        }
+
+        .partners-title {
+            font-size: 2.5rem;
+            color: #1a2332;
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .partners-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #75A13F;
+            border-radius: 2px;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .partner-card {
+            background-color: #f8f9fa;
+            padding: 30px 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            border-color: #75A13F;
+            box-shadow: 0 10px 25px rgba(117, 161, 63, 0.15);
+        }
+
+        .partner-name {
+            font-size: 1.3rem;
+            color: #1a2332;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .partner-desc {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Section Nos Domaines d'Excellence */
+        .excellence-domains {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .excellence-title {
+            font-size: 2.5rem;
+            color: #1a2332;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .excellence-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #75A13F;
+            border-radius: 2px;
+        }
+
+        .excellence-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 30px auto 50px;
+            line-height: 1.6;
+        }
+
+        .domains-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .domain-card {
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid #75A13F;
+        }
+
+        .domain-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .domain-title {
+            font-size: 1.6rem;
+            color: #1a2332;
+            margin-bottom: 20px;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .domain-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #75A13F;
+        }
+
+        .domain-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .domain-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 25px;
+        }
+
+        .domain-list li {
+            padding: 8px 0;
+            color: #666;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .domain-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #75A13F;
+            font-weight: bold;
+        }
+
+        .domain-link {
+            display: inline-block;
+            color: #75A13F;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .domain-link:hover {
+            color: #5a7f31;
+            text-decoration: underline;
+        }
+
+        /* Section Succès des Étudiants */
+        .student-success-section {
+            background: linear-gradient(135deg, #1a2332 0%, #2c3e50 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .success-title {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 30px;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        .success-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #75A13F;
+            border-radius: 2px;
+        }
+
+        .success-quote {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-style: italic;
+        }
+
+        .success-author {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #75A13F;
+        }
+
+        /* Section Images à la Une */
+        .featured-images-section {
+            background-color: white;
+            padding: 80px 0;
+        }
+
+        .featured-title {
+            font-size: 2.5rem;
+            color: #1a2332;
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .featured-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #75A13F;
+            border-radius: 2px;
+        }
+
+        .featured-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .image-item {
+            height: 250px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .featured-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .image-item:hover .featured-img {
+            transform: scale(1.1);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer-main {
+            background-color: #1a2332;
+            color: white;
+            padding: 60px 20px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #75A13F;
+            font-weight: 700;
+        }
+
+        .footer-col p, .footer-col ul {
+            font-size: 0.95rem;
+            color: #7f8c8d;
+            line-height: 1.8;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #75A13F;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-col a:hover {
+            color: #5a7f31;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 20px auto 0;
+            text-align: center;
+            padding-top: 15px;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
+        .social-links-footer {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .contact-info i {
+            color: #75A13F;
+            margin-top: 3px;
+        }
+        
+        .hero-slider {
+            margin-top: 0;
+        }
+
+        /* Bannière Cookies */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #1a2332;
+            color: white;
+            padding: 15px 20px;
+            z-index: 9999;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+            display: none;
+        }
+
+        .cookie-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .cookie-content p {
+            flex: 1;
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .cookie-content a {
+            color: #75A13F;
+            text-decoration: underline;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-success {
+            background-color: #75A13F;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .btn-success:hover {
+            background-color: #5a7f31;
+        }
+
+        .btn-outline-cookie {
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-outline-cookie:hover {
+            background-color: white;
+            color: #1a2332;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar-container {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 20px;
+            }
+            
+            .top-bar-left, .top-bar-right {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            
+            .top-bar-location {
+                margin-right: 0;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .navbar {
+                top: 70px;
+            }
+            
+            body {
+                padding-top: 130px;
+            }
+            
+            .cookie-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .cookie-buttons {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .slide {
+                min-height: 500px;
+            }
+
+            .hero-content {
+                padding: 0 20px;
+            }
+
+            /* TAILLES MOBILE RÉDUITES */
+            .hero-title {
+                font-size: 1.8rem; /* Plus petit sur mobile */
+            }
+
+            .hero-subtitle {
+                font-size: 0.9rem; /* Plus petit sur mobile */
+            }
+
+            .hero-badge {
+                font-size: 0.7rem;
+                padding: 5px 15px;
+            }
+
+            .btn-primary, .btn-outline {
+                padding: 10px 22px;
+                font-size: 0.85rem;
+            }
+
+            .slider-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 0.9rem;
+            }
+
+            .slider-btn.prev {
+                left: 10px;
+            }
+
+            .slider-btn.next {
+                right: 10px;
+            }
+
+            .slider-dots {
+                bottom: 20px;
+            }
+
+            /* Responsive nouvelles sections */
+            .modern-guides-title,
+            .partners-title,
+            .excellence-title,
+            .success-title,
+            .featured-title {
+                font-size: 2rem;
+            }
+
+            .modern-guide-feature,
+            .domain-card {
+                min-width: 100%;
+            }
+
+            .images-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Bannière Cookies -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-content">
+            <p>🍪 Nous utilisons des cookies pour améliorer votre expérience sur notre site et analyser le trafic. En cliquant sur "Accepter", vous consentez à l'utilisation de ces cookies conformément à notre <a href="politique-confidentialite.html">Politique de confidentialité</a>.</p>
+            <div class="cookie-buttons">
+                <button id="accept-cookies" class="btn btn-success">Accepter</button>
+                <button id="decline-cookies" class="btn btn-outline-cookie">Refuser</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ===== BARRE SUPÉRIEURE BLEUE FIXE ===== -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="top-bar-left">
+                <a href="tel:+2290154545416" class="top-bar-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+229 01 54 54 54 16</span>
+                </a>
+                <a href="mailto:slabenin.info@gmail.com" class="top-bar-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>slabenin.info@gmail.com</span>
+                </a>
+            </div>
+            <div class="top-bar-right">
+                <div class="top-bar-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Cotonou, Bénin</span>
+                </div>
+                <div class="social-icons-top">
+                    <a href="https://www.facebook.com/share/17RPSHCBWw/" class="social-icon-top" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://youtube.com/@slabenin?si=OEbEoWmskN0kwH8S" class="social-icon-top" aria-label="Youtube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@sla.benin?_t=ZM-90kCfnxhpCC&_r=1" class="social-icon-top" aria-label="Tiktok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://linkedin.com" class="social-icon-top" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="spinner"></div>
+            <p>Chargement...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/noire.png" alt="SLA Bénin" class="logo-img">
+                <div class="logo-text"></div>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link active">Accueil</a></li>
+                <li><a href="about.html" class="nav-link">À Propos</a></li>
+                <li class="dropdown">
+                    <a href="courses.html" class="nav-link">Nos Formations <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="courses.html#petitsexplorateurs">Petits Explorateurs</a></li>
+                        <li><a href="courses.html#talentsemergents">Talents Emergents</a></li>
+                        <li><a href="courses.html#premaster">Pré-Master</a></li>
+                        <li><a href="courses.html#ath">ATH</a></li>
+                        <li><a href="courses.html#aff">AFF</a></li>
+                        <li><a href="courses.html#autreprogramme">Autre Programme</a></li>
+                    </ul>
+                </li>
+                <li><a href="gallery.html" class="nav-link">Galerie</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="inscription.html" class="btn-nav">S'inscrire</a></li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Slider -->
+    <section class="hero-slider">
+        <!-- CORRECTION : Images avec extension correcte -->
+        <div class="slide active" style="background-image: url('images/alli.jpg');">
+            <div class="hero-content" data-aos="fade-up">
+                <div class="hero-badge">✦ Excellence Académique</div>
+                <h1 class="hero-title">
+                    CENTRE D'EXCELLENCE ET<br>
+                    DE <span>DISCIPLINE ACADÉMIQUE</span>
+                </h1>
+                <p class="hero-subtitle">Bénéficiez d'une formation certifiante dispensée par des experts, garantissant votre succès professionnel et votre épanouissement linguistique.</p>
+                <div class="hero-buttons">
+                    <a href="courses.html" class="btn-primary">
+                        Découvrir notre Mission
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="about.html" class="btn-outline">
+                        En savoir plus
+                        <i class="fas fa-info-circle"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CORRECTION : Vérifiez l'extension de l'image (moi.jpg ou moi.JPG) -->
+        <div class="slide" style="background-image: url('images/moi.jpg');">
+            <div class="hero-content" data-aos="fade-up">
+                <div class="hero-badge">✦ Environnement Premium</div>
+                <h1 class="hero-title">
+                    LE CADRE IDÉAL POUR<br>
+                    LA <span>FORMATION DES ENFANTS</span>
+                </h1>
+                <p class="hero-subtitle">Environnement moderne et confortable spécialement conçu pour maximiser le potentiel linguistique de chaque apprenant.</p>
+                <div class="hero-buttons">
+                    <a href="gallery.html" class="btn-primary">
+                        Voir notre campus
+                        <i class="fas fa-images"></i>
+                    </a>
+                    <a href="contact.html" class="btn-outline">
+                        Nous contacter
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CORRECTION : Vérifiez l'extension de l'image (roma.jpg ou roma.JPG) -->
+        <div class="slide" style="background-image: url('images/roma.jpg');">
+            <div class="hero-content" data-aos="fade-up">
+                <div class="hero-badge">✦ Rejoignez l'Excellence</div>
+                <h1 class="hero-title">
+                    REJOIGNEZ <span>L'ÉLITE</span><br>
+                    MAINTENANT
+                </h1>
+                <p class="hero-subtitle">De nombreuses carrières ont pris un nouvel élan grâce à notre engagement indéfectible envers l'excellence académique et la réussite de nos étudiants.</p>
+                <div class="hero-buttons">
+                    <a href="inscription.html" class="btn-primary">
+                        Démarrer Votre Inscription
+                        <i class="fas fa-user-graduate"></i>
+                    </a>
+                    <a href="about.html" class="btn-outline">
+                        Notre histoire
+                        <i class="fas fa-book-open"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <button class="slider-btn prev" onclick="changeSlide(-1)">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="slider-btn next" onclick="changeSlide(1)">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        
+        <div class="slider-dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section" data-aos="fade-up">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="stat-number" data-target="200">0</h3>
+                    <p>Étudiants Formés</p>
+                </div>
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3 class="stat-number" data-target="10">0</h3>
+                    <p>Professeurs Qualifiés</p>
+                </div>
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="stat-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="stat-number" data-target="98">0</h3>
+                    <p>% Taux de Réussite</p>
+                </div>
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="stat-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="stat-number" data-target="4">0</h3>
+                    <p>Pays Représentés</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION ÉCLAIREURS MODERNES ===== -->
+    <section class="modern-guides-section" data-aos="fade-up">
+        <div class="container">
+            <h2 class="modern-guides-title" data-aos="fade-up">Éclaireurs Modernes : Notre Institut, Votre Succès</h2>
+            <p class="modern-guides-subtitle" data-aos="fade-up" data-aos-delay="100">
+                Nous accompagnons chaque apprenant vers l'excellence linguistique avec des méthodes modernes et des résultats concrets
+            </p>
+            
+            <div class="modern-guides-features">
+                <div class="modern-guide-feature" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="modern-guide-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Un taux de placement élevé</h3>
+                    <p>Avec plus de 90% de nos diplômés employés dans les 6 mois suivant leur certification.</p>
+                </div>
+                
+                <div class="modern-guide-feature" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="modern-guide-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Une réputation reconnue</h3>
+                    <p>Reconnue par les institutions nationales et internationales pour l'excellence de notre enseignement.</p>
+                </div>
+                
+                <div class="modern-guide-feature" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="modern-guide-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Un engagement communautaire</h3>
+                    <p>À travers divers projets locaux et culturels visant à promouvoir le multilinguisme au Bénin.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION NOS PARTENAIRES ===== -->
+    <section class="partners-section" data-aos="fade-up">
+        <div class="container">
+            <h2 class="partners-title" data-aos="fade-up">Nos Partenaires</h2>
+            
+            <div class="partners-grid">
+                <div class="partner-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="partner-name">ESGIS BENIN</div>
+                    <div class="partner-desc">Ecole supérieure de Gestion Informatique et des Sciences</div>
+                </div>
+                
+
+                <div class="partner-card" data-aos="flip-left" data-aos-delay="250">
+                    <div class="partner-name">HERCI</div>
+                    <div class="partner-desc">Haute Ecole Régionale de Commerce International</div>
+                </div>
+                
+                <div class="partner-card" data-aos="flip-left" data-aos-delay="300">
+                    <div class="partner-name">MTN BUSINESS BENIN</div>
+                    <div class="partner-desc">Depuis 3ans, nous formons quelques personnels de MTN Business chaque année pendant 3mois.</div>
+                </div>
+                
+                <div class="partner-card" data-aos="flip-left" data-aos-delay="350">
+                    <div class="partner-name">INTERCOTON COTE D'IVOIRE</div>
+                    <div class="partner-desc">Interprofession de la filière Coton en Côte d'Ivoire</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Preview -->
+    <section class="courses-preview">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Nos Formations</h2>
+                <div class="title-line"></div>
+                <p class="section-subtitle">Des cours de langues de qualité internationale</p>
+            </div>
+            
+            <div class="courses-grid">
+                <div class="course-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="course-image" style="background-image: url('images/petits-explorateurs.jpg');"></div>
+                    <div class="course-overlay"></div>
+                    <div class="course-content">
+                        <h3>Petits Explorateurs</h3>
+                        <p>Donnez à vos enfants l'avantage du bilinguisme dès leur jeune âge et ouvrez-leur les portes d'un avenir sans frontières.</p>
+                        <a href="courses.html#petitsexplorateurs" class="course-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="course-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="course-image" style="background-image: url('images/talents-emergents.jpg');"></div>
+                    <div class="course-overlay"></div>
+                    <div class="course-content">
+                        <h3>Talents Emergents</h3>
+                        <p>Construisez l'Avenir Bilingue de vos Ados. <br> Un programme d'anglais sur mesure pour des résultats impressionnants</p>
+                        <a href="courses.html#talentsemergents" class="course-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="course-card" data-aos="flip-left" data-aos-delay="300">
+                    <div class="course-image" style="background-image: url('images/pre-masters.jpg');"></div>
+                    <div class="course-overlay"></div>
+                    <div class="course-content">
+                        <h3>Pré-Masters</h3>
+                        <p>Une formation personnalisée en langue anglaise axée sur le parlé, spécialement conçue pour les Étudiants.</p>
+                        <a href="courses.html#premaster" class="course-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="course-card" data-aos="flip-left" data-aos-delay="400">
+                    <div class="course-image" style="background-image: url('images/ath.jpg');"></div>
+                    <div class="course-overlay"></div>
+                    <div class="course-content">
+                        <h3>ATH</h3>
+                        <p>Acteurs du Tourisme et de l'Hôtellerie. Parlez l'Anglais, Servez Mieux.</p>
+                        <a href="courses.html#ath" class="course-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="course-card" data-aos="flip-left" data-aos-delay="500">
+                    <div class="course-image" style="background-image: url('images/aff.jpg');"></div>
+                    <div class="course-overlay"></div>
+                    <div class="course-content">
+                        <h3>AFF</h3>
+                        <p>Anglais pour Femmes Fonctionnaires. Parlez désormais avec assurance.</p>
+                        <a href="courses.html#aff" class="course-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="course-card" data-aos="flip-left" data-aos-delay="600">
+                    <div class="course-image" style="background-image: url('images/autres-programmes.jpg');"></div>
+                    <div class="course-overlay"></div>
+                    <div class="course-content">
+                        <h3>Autres Programmes</h3>
+                        <p>Progressez en anglais à votre rythme, avec nos formules normale et intensive.</p>
+                        <a href="courses.html#autreprogramme" class="course-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION NOS DOMAINES D'EXCELLENCE ===== -->
+    <section class="excellence-domains" data-aos="fade-up">
+        <div class="container">
+            <h2 class="excellence-title" data-aos="fade-up">Nos Domaines d'Excellence</h2>
+            <p class="excellence-subtitle" data-aos="fade-up" data-aos-delay="100">
+                Spécialisés dans nos trois principaux domaines d'enseignement et découverte : comment nous préparons nos étudiants à façonner l'avenir linguistique.
+            </p>
+            
+            <div class="domains-container">
+                <div class="domain-card" data-aos="zoom-in" data-aos-delay="200">
+                    <h3 class="domain-title">Sciences du Langage</h3>
+                    <p>L'apprentissage des langues, les exigences de communication internationale et l'évolution permanente des compétences linguistiques.</p>
+                    <ul class="domain-list">
+                        <li>Anglais académique et professionnel</li>
+                        <li>Français langue étrangère</li>
+                        <li>Espagnol et allemand</li>
+                        <li>Préparation aux certifications internationales</li>
+                    </ul>
+                    <a href="courses.html" class="domain-link">En savoir plus →</a>
+                </div>
+                
+                <div class="domain-card" data-aos="zoom-in" data-aos-delay="300">
+                    <h3 class="domain-title">Méthodologie Pédagogique</h3>
+                    <p>Approfondie, innovante et présente dans toutes nos sections (pédagogie, administration, évaluation).</p>
+                    <ul class="domain-list">
+                        <li>Enseignement par immersion</li>
+                        <li>Technologies éducatives modernes</li>
+                        <li>Suivi personnalisé des apprenants</li>
+                        <li>Évaluation continue et certificative</li>
+                    </ul>
+                    <a href="about.html" class="domain-link">En savoir plus →</a>
+                </div>
+                
+                <div class="domain-card" data-aos="zoom-in" data-aos-delay="400">
+                    <h3 class="domain-title">Développement Professionnel</h3>
+                    <p>La création d'opportunités professionnelles, le développement des compétences linguistiques, la gestion de carrière internationale, etc.</p>
+                    <ul class="domain-list">
+                        <li>Préparation aux entretiens en langues étrangères</li>
+                        <li>Rédaction de CV et lettres de motivation</li>
+                        <li>Communication professionnelle interculturelle</li>
+                        <li>Coaching linguistique personnalisé</li>
+                    </ul>
+                    <a href="contact.html" class="domain-link">En savoir plus →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="why-us">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Pourquoi Choisir Notre Institut ?</h2>
+                <div class="title-line"></div>
+            </div>
+            
+            <div class="why-grid">
+                <div class="why-item" data-aos="fade-right">
+                    <div class="why-image" style="background-image: url('images/IMG_7876.jpg');"></div>
+                    <div class="why-content">
+                        <h3>Polyvalence</h3>
+                        <p>Nos programmes couvrent tous les niveaux d'apprentissage, du débutant à l'avancé. Nous adaptons notre enseignement à vos besoins spécifiques pour garantir votre progression rapide et efficace.</p>
+                    </div>
+                </div>
+                
+                <div class="why-item reverse" data-aos="fade-left">
+                    <div class="why-content">
+                        <h3>Dynamisme</h3>
+                        <p>Nos méthodes d'enseignement modernes et interactives rendent l'apprentissage des langues captivant. Nous utilisons des technologies de pointe et des approches pédagogiques innovantes.</p>
+                    </div>
+                    <div class="why-image" style="background-image: url('images/IMG_7861.jpg');"></div>
+                </div>
+                
+                <div class="why-item" data-aos="fade-right">
+                    <div class="why-image" style="background-image: url('images/hqdefault.jpg');"></div>
+                    <div class="why-content">
+                        <h3>International</h3>
+                        <p>Rejoignez une communauté multiculturelle d'étudiants venus des quatre coins du monde. Échangez, apprenez et grandissez dans un environnement diversifié et enrichissant.</p>
+                    </div>
+                </div>
+                
+                <div class="why-item reverse" data-aos="fade-left">
+                    <div class="why-content">
+                        <h3>Excellence</h3>
+                        <p>Avec un taux de réussite de 100% et seulement 0,1% de redoublants, notre engagement envers l'excellence académique est inégalé. Nos diplômés se distinguent partout où ils vont.</p>
+                    </div>
+                    <div class="why-image" style="background-image: url('images/IMG_1092.jpg');"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION SUCCÈS DE NOS ÉTUDIANTS ===== -->
+    <section class="student-success-section" data-aos="fade-up">
+        <div class="container">
+            <h2 class="success-title" data-aos="fade-up">Succès de nos étudiants</h2>
+            <div class="success-quote" data-aos="fade-up" data-aos-delay="100">
+                "À SLA Bénin, nous sommes très fiers des résultats académiques de nos étudiants. Nous croyons fermement que l'excellence linguistique est fondamentale pour leur carrière professionnelle et leur épanouissement personnel."
+            </div>
+            <div class="success-author" data-aos="fade-up" data-aos-delay="200">— Équipe Pédagogique SLA Bénin</div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION IMAGES À LA UNE ===== -->
+    <section class="featured-images-section" data-aos="fade-up">
+        <div class="container">
+            <h2 class="featured-title" data-aos="fade-up">Images à la une</h2>
+            <p class="featured-subtitle" data-aos="fade-up" data-aos-delay="100">
+                Les moments clés que nous capturons dans nos photos : cérémonies, cours, événements et succès.
+            </p>
+            
+            <div class="images-grid">
+                <div class="image-item" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="images/IMG_7876.jpg" alt="Cours en groupe" class="featured-img">
+                </div>
+                <div class="image-item" data-aos="zoom-in" data-aos-delay="250">
+                    <img src="images/IMG_7861.jpg" alt="Atelier linguistique" class="featured-img">
+                </div>
+                <div class="image-item" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="images/IMG_1092.jpg" alt="Remise de certificats" class="featured-img">
+                </div>
+                <div class="image-item" data-aos="zoom-in" data-aos-delay="350">
+                    <img src="images/hqdefault.jpg" alt="Événement culturel" class="featured-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" data-aos="zoom-in">
+        <div class="cta-overlay"></div>
+        <div class="container">
+            <div class="cta-content">
+                <h2>Investissez dans l'excellence de votre parcours linguistique.</h2>
+                <p>La prochaine session de formation intensive débute bientôt. Sécurisez votre place et commencez à construire votre profil international dès aujourd'hui.</p>
+                <a href="inscription.html" class="btn btn-cta" id="inscription-cta">
+                    <span>S'inscrire Maintenant</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NOUVEAU FOOTER ===== -->
+    <footer class="footer-main">
+        <div class="footer-content">
+            <!-- Col 1: Logo & Description -->
+            <div class="footer-col">
+                <h4>SLA BÉNIN</h4>
+                <p>Centre d'Excellence Académique spécialisé dans l'enseignement des langues et le renforcement des compétences.</p>
+                <div class="social-links-footer">
+                    <a href="https://www.facebook.com/share/17RPSHCBWw/" class="social-icon-top" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://youtube.com/@slabenin?si=OEbEoWmskN0kwH8S" class="social-icon-top" aria-label="Youtube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@sla.benin?_t=ZM-90kCfnxhpCC&_r=1" class="social-icon-top" aria-label="Tiktok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://linkedin.com" class="social-icon-top" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Col 2: Liens Rapides -->
+            <div class="footer-col">
+                <h4>Liens Rapides</h4>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-angle-right"></i> Accueil</a></li>
+                    <li><a href="about.html"><i class="fas fa-angle-right"></i> À Propos de Nous</a></li>
+                    <li><a href="courses.html"><i class="fas fa-angle-right"></i> Nos Programmes</a></li>
+                    <li><a href="gallery.html"><i class="fas fa-angle-right"></i> Événements</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i> Politique de Confidentialité</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Formations Populaires -->
+            <div class="footer-col">
+                <h4>Nos Formations</h4>
+                <ul>
+                    <li><a href="courses.html#petitsexplorateurs"><i class="fas fa-graduation-cap"></i> Petits Explorateurs</a></li>
+                    <li><a href="courses.html#talentsemergents"><i class="fas fa-graduation-cap"></i> Talents Emergents</a></li>
+                    <li><a href="courses.html#premaster"><i class="fas fa-graduation-cap"></i> Pré-Master</a></li>
+                    <li><a href="courses.html#ath"><i class="fas fa-graduation-cap"></i> ATH</a></li>
+                    <li><a href="courses.html#aff"><i class="fas fa-graduation-cap"></i> AFF</a></li>
+                    <li><a href="courses.html#autreprogramme"><i class="fas fa-graduation-cap"></i> Autres Programmes</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 4: Contact -->
+            <div class="footer-col">
+                <h4>Contactez-Nous</h4>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Cotonou, Bénin<br>Sègbèya</span>
+                    </li>
+                    <li>
+                        <i class="fab fa-whatsapp"></i> 
+                        <span>+229 01 54 54 54 16</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+229 01 44 50 30 83</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>slabenin.info@gmail.com</span>
+                    </li>
+                    <li><a href="#"><i class="fas fa-clock"></i> Lun - Ven: 8h00 - 18h00</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 SLA Bénin. Tous droits réservés.
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    
+    <!-- Script pour la bannière cookies et tracking -->
+    <script>
+    // Initialiser AOS
+    AOS.init({
+        duration: 1000,
+        once: true,
+    });
+
+    // Fonction pour le slider
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+
+    function showSlide(n) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        currentSlide = (n + slides.length) % slides.length;
+        
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+    }
+
+    function changeSlide(n) {
+        showSlide(currentSlide + n);
+    }
+
+    function currentSlideIndex(n) {
+        showSlide(n);
+    }
+
+    // Initialiser le slider
+    showSlide(0);
+
+    // Auto-slide toutes les 5 secondes
+    setInterval(() => {
+        changeSlide(1);
+    }, 5000);
+
+    // Fonction pour track les événements Facebook
+    function trackFacebookEvent(eventName, params = {}) {
+        if(localStorage.getItem('cookieConsent') === 'accepted' && typeof fbq !== 'undefined') {
+            fbq('track', eventName, params);
+            console.log('Événement Facebook tracké:', eventName, params);
+        }
+    }
+
+    // Gestion de la bannière cookies
+    document.addEventListener('DOMContentLoaded', function() {
+        const cookieBanner = document.getElementById('cookie-banner');
+        const acceptBtn = document.getElementById('accept-cookies');
+        const declineBtn = document.getElementById('decline-cookies');
+        
+        // Vérifier si une décision a déjà été prise
+        if(!localStorage.getItem('cookieConsent')) {
+            // Afficher la bannière après 1 seconde
+            setTimeout(() => {
+                cookieBanner.style.display = 'block';
+            }, 1000);
+        }
+        
+        // Accepter les cookies
+        acceptBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            cookieBanner.style.display = 'none';
+            
+            // Initialiser le pixel Meta
+            if(typeof fbq !== 'undefined') {
+                fbq('init', '1334239714906792');
+                fbq('track', 'PageView');
+            }
+            
+            console.log('Cookies acceptés - Pixel Meta activé');
+            trackFacebookEvent('Lead', {content_name: 'Acceptation Cookies'});
+        });
+        
+        // Refuser les cookies
+        declineBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'declined');
+            cookieBanner.style.display = 'none';
+            console.log('Cookies refusés - Pixel Meta désactivé');
+        });
+        
+        // Track les clics sur le bouton d'inscription CTA
+        const inscriptionCta = document.getElementById('inscription-cta');
+        if(inscriptionCta) {
+            inscriptionCta.addEventListener('click', function(e) {
+                trackFacebookEvent('CompleteRegistration', {
+                    value: 0.00,
+                    currency: 'EUR',
+                    content_name: 'Inscription Formation'
+                });
+            });
+        }
+        
+        // Track les clics sur les liens de contact
+        const contactLinks = document.querySelectorAll('a[href="contact.html"]');
+        contactLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                trackFacebookEvent('Contact');
+            });
+        });
+        
+        // Track les clics sur les formations
+        const formationLinks = document.querySelectorAll('.course-link');
+        formationLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const formationName = this.closest('.course-content').querySelector('h3').textContent;
+                trackFacebookEvent('ViewContent', {
+                    content_name: formationName,
+                    content_category: 'Formation'
+                });
+            });
+        });
+        
+        // Track les clics sur les liens d'inscription dans le menu
+        const menuInscriptionBtn = document.querySelector('.btn-nav');
+        if(menuInscriptionBtn) {
+            menuInscriptionBtn.addEventListener('click', function(e) {
+                trackFacebookEvent('InitiateCheckout');
+            });
+        }
+        
+        // Track les clics sur le bouton d'inscription du slider
+        const sliderInscriptionBtns = document.querySelectorAll('.hero-buttons a[href="inscription.html"]');
+        sliderInscriptionBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                trackFacebookEvent('CompleteRegistration', {
+                    value: 0.00,
+                    currency: 'EUR',
+                    content_name: 'Inscription via Slider'
+                });
+            });
+        });
+    });
+    </script>
+</body>
+</html>
